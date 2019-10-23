@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/group1">
+        <item
+            android:id="@+id/nav_recepción"
+            android:icon="@drawable/ic_recepcion_2"
+            android:title="@string/recepcion_tilde" />
+    </group>
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/group2">
+        <item
+            android:id="@+id/nav_despacho"
+            android:icon="@drawable/ic_despacho"
+            android:title="@string/despacho" />
+    </group>
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/group3">
+        <item
+            android:id="@+id/nav_inventario"
+            android:icon="@drawable/ic_inventario"
+            android:title="@string/inventario" />
+    </group>
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/group4">
+        <item
+            android:id="@+id/nav_impresion"
+            android:icon="@drawable/ic_impresion_azul_3"
+            android:title="Impresión" />
+    </group>
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/group5">
+        <item
+            android:id="@+id/nav_configuracion"
+            android:icon="@drawable/ic_configuracion"
+            android:title="@string/configuracion" />
+    </group>
+
+    <group android:checkableBehavior="single"
+        android:id="@+id/group6">
+        <item
+            android:id="@+id/nav_cerrar_sesion"
+            android:icon="@drawable/ic_cerrar_sesion"
+            android:title="Cerrar sesión" />
+    </group>
+</menu>

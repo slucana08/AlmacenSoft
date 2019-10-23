@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.daimajia.swipe.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/holder_swipe_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="@dimen/margin_small"
+    android:layout_marginLeft="@dimen/margin_default">
+
+    <LinearLayout
+        android:id="@+id/delete_linear_layout"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="#484848"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/ic_delete"
+            app:tint="@android:color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/eliminar"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_caption" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccentMild"
+            android:padding="@dimen/margin_default">
+
+            <TextView
+                android:id="@+id/descripcion_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/margin_default"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_body"
+                app:layout_constraintEnd_toStartOf="@+id/cantidad_text_view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="BW HUG NAT REFRESH REF 3X184" />
+
+            <TextView
+                android:id="@+id/codigo_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/margin_default"
+                android:textSize="@dimen/text_caption"
+                app:layout_constraintEnd_toStartOf="@+id/cantidad_text_view"
+                app:layout_constraintStart_toStartOf="@id/descripcion_text_view"
+                app:layout_constraintTop_toBottomOf="@id/descripcion_text_view"
+                tools:text="32847329587234" />
+
+            <TextView
+                android:id="@+id/cantidad_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_title"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="44" />
+
+            <TextView
+                android:id="@+id/ubicacion_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xsmall"
+                android:text="@string/ubicacion_dos_puntos_minus"
+                android:textSize="@dimen/text_caption"
+                app:layout_constraintStart_toStartOf="@id/descripcion_text_view"
+                app:layout_constraintTop_toBottomOf="@id/codigo_text_view" />
+
+            <TextView
+                android:id="@+id/lote_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xsmall"
+                android:text="@string/lote_dos_puntos_minus"
+                android:textSize="@dimen/text_caption"
+                app:layout_constraintStart_toStartOf="@id/descripcion_text_view"
+                app:layout_constraintTop_toBottomOf="@id/ubicacion_text_view" />
+
+            <TextView
+                android:id="@+id/serie_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xsmall"
+                android:text="@string/serie_dos_puntos_minus"
+                android:textSize="@dimen/text_caption"
+                app:layout_constraintStart_toStartOf="@id/descripcion_text_view"
+                app:layout_constraintTop_toBottomOf="@id/lote_text_view" />
+
+            <android.support.constraint.Barrier
+                android:id="@+id/barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="end"
+                app:constraint_referenced_ids="ubicacion_text_view, lote_text_view, serie_text_view" />
+
+            <TextView
+                android:id="@+id/ubicacion2_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/margin_default"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_caption"
+                app:layout_constraintBaseline_toBaselineOf="@id/ubicacion_text_view"
+                app:layout_constraintEnd_toStartOf="@+id/cantidad_text_view"
+                app:layout_constraintStart_toEndOf="@id/barrier"
+                tools:text="A01" />
+
+            <TextView
+                android:id="@+id/lote2_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/margin_default"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_caption"
+                app:layout_constraintBaseline_toBaselineOf="@id/lote_text_view"
+                app:layout_constraintEnd_toStartOf="@+id/cantidad_text_view"
+                app:layout_constraintStart_toEndOf="@id/barrier"
+                tools:text="AAAAAA" />
+
+            <TextView
+                android:id="@+id/serie2_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/margin_default"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_caption"
+                app:layout_constraintBaseline_toBaselineOf="@id/serie_text_view"
+                app:layout_constraintEnd_toStartOf="@+id/cantidad_text_view"
+                app:layout_constraintStart_toEndOf="@id/barrier"
+                tools:text="SDADKFJADALDK" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+        <FrameLayout
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/colorPrimary" />
+    </FrameLayout>
+
+</com.daimajia.swipe.SwipeLayout>

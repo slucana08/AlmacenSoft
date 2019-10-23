@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/nav_header_height"
+    android:background="@color/colorPrimary"
+    android:gravity="bottom"
+    android:paddingTop="10dp"
+    android:orientation="vertical"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="4dp"
+        android:contentDescription="@string/nav_header_desc"
+        android:background="@drawable/oval_white"
+        android:src="@drawable/ic_logo_aplicacion"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginRight="60dp"
+        android:layout_marginLeft="60dp"
+        android:background="@drawable/ic_gestion_almacenes"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_weight="0"
+        android:background="@drawable/ic_powered"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"/>
+
+
+</LinearLayout>

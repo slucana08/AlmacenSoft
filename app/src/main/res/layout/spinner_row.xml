@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cust_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:textColor="@color/textColorPrimaryConfig"
+    android:textSize="16sp"
+    android:paddingRight="30dp"
+    android:paddingBottom="4dp"
+    android:textIsSelectable="false"
+    tools:text="Seleccione almacen" />

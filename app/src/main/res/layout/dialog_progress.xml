@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/dialog_width"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center_horizontal">
+
+    <View
+        android:id="@+id/holder_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/rectangle_white_solid"
+        app:layout_constraintBottom_toBottomOf="@id/bottom_space"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_space" />
+
+    <FrameLayout
+        android:id="@+id/second_frame_layout"
+        android:layout_width="@dimen/dialog_image_height"
+        android:layout_height="@dimen/dialog_image_height"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            app:backgroundTint="?attr/colorPrimary"
+            android:background="@drawable/oval_primary_solid" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_small"
+            android:background="@drawable/oval_primary_solid"
+            app:backgroundTint="?attr/colorPrimary" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/icon_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/margin_regular"
+            android:src="@drawable/ic_menu_share"
+            android:tint="@android:color/white" />
+
+    </FrameLayout>
+
+    <android.support.v4.widget.Space
+        android:id="@+id/iv_space"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dialog_image_height_half"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <android.support.v4.widget.Space
+        android:id="@+id/margin_space"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/margin_default"
+        app:layout_constraintTop_toTopOf="@id/holder_view"
+        tools:ignore="MissingConstraints" />
+
+    <android.support.v4.widget.Space
+        android:id="@+id/margin_space_2"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/margin_small"
+        app:layout_constraintTop_toBottomOf="@id/second_frame_layout"
+        tools:ignore="MissingConstraints" />
+
+    <android.support.constraint.Group
+        android:id="@+id/ly_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="iv_space, second_frame_layout" />
+
+    <android.support.constraint.Barrier
+        android:id="@+id/barrier_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="margin_space, margin_space_2, second_frame_layout" />
+
+    <TextView
+        android:id="@+id/title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/margin_small"
+        android:textSize="@dimen/text_subheading"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barrier_top"
+        tools:text="Impresión" />
+
+    <TextView
+        android:id="@+id/message_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_default"
+        android:layout_marginStart="@dimen/margin_default"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title_text_view"
+        tools:text="Se estan descargando la informacion necesaria para usar el modo batch" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_default"
+        android:layout_marginStart="@dimen/margin_default"
+        android:layout_marginTop="@dimen/margin_default"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/message_text_view" />
+
+    <TextView
+        android:id="@+id/percentage_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/progress_bar"
+        app:layout_constraintTop_toBottomOf="@id/progress_bar"
+        tools:text="25%" />
+
+    <TextView
+        android:id="@+id/quantity_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@id/progress_bar"
+        app:layout_constraintTop_toBottomOf="@id/progress_bar"
+        tools:text="3/4" />
+
+    <android.support.constraint.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="percentage_text_view,quantity_text_view" />
+
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/ok_button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_default"
+        android:layout_marginStart="@dimen/margin_default"
+        android:layout_marginTop="@dimen/margin_default"
+        android:textSize="@dimen/text_body"
+        app:backgroundTint="?attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/barrier"
+        tools:text="@string/ok" />
+
+    <android.support.v4.widget.Space
+        android:id="@+id/bottom_space"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/margin_default"
+        app:layout_constraintTop_toBottomOf="@id/ok_button" />
+
+</android.support.constraint.ConstraintLayout>

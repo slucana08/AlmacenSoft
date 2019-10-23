@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="8dp"
+    android:padding="8dp"
+    style="@style/AppTheme.Card">
+
+    <LinearLayout
+        android:id="@+id/documento_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_weight="0"
+            android:layout_height="wrap_content"
+            android:text="@string/documento_dos_puntos"
+            android:textStyle="bold"
+            android:layout_marginLeft="16dp"/>
+
+        <TextView
+            android:id="@+id/documento_lectura_text_view"
+            android:textSize="16sp"
+            android:layout_marginLeft="4dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAllCaps="true"
+            android:text="0123456789"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider_view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/textColorPrimaryConfig"
+        android:layout_marginBottom="4dp"
+        android:layout_below="@id/documento_linear_layout"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/lectura_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_small"
+        android:elevation="2dp"
+        android:layout_below="@id/divider_view"
+        tools:listitem="@layout/item_lectura_swipe_consultar" />
+
+    <ProgressBar
+        android:id="@+id/lectura_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/empty_lectura_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_lecturas_documento"
+        android:textSize="16sp"
+        android:layout_centerInParent="true"/>
+
+    <ImageView
+        android:id="@+id/error_lectura_image_view"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:layout_above="@id/empty_lectura_text_view"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_no_internet"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/retry_lectura_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:textSize="14sp"
+        android:text="@string/reintentar"
+        android:textColor="@color/red"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/empty_lectura_text_view"
+        android:layout_marginTop="10dp"
+        android:textAllCaps="true"
+        android:visibility="gone"/>
+
+</RelativeLayout>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/AppTheme.Card"
+            android:orientation="vertical"
+            android:layout_marginBottom="8dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/seleccion_tipo_documento"
+                style="@style/menu_item_text"
+                android:layout_marginBottom="4dp"/>
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/documento_spinner"
+                style="@style/Widget.AppCompat.Spinner.Underlined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:dropDownVerticalOffset="24dp"
+                android:layout_marginBottom="8dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/nro_documento_recepcion_edit_text"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"
+                    android:hint="@string/n_documento"/>
+
+                <ImageView
+                    android:id="@+id/search_recepcion_image_view"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_weight="0"
+                    android:layout_marginLeft="4dp"
+                    android:tint="@color/colorPrimary"
+                    android:src="@drawable/ic_search"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            style="@style/AppTheme.Card"
+            android:layout_marginBottom="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="0"
+                    android:layout_height="wrap_content"
+                    android:text="@string/almacen"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/almacen_recepcion_text_view"
+                    android:textSize="16sp"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="true"
+                    android:text="MATERIA PRIMA"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/textColorPrimaryConfig"
+                android:layout_marginBottom="8dp"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recepcion_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="4dp"
+                android:clipToPadding="false"
+                tools:listitem="@layout/item_documento_pendiente"/>
+
+            <TextView
+                android:id="@+id/empty_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/no_documentos_pendientes"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:layout_gravity="center_horizontal"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

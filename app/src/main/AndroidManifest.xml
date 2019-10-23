@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dms.almacensoft">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_icon_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".features.principal.PrincipalActivity"
+            android:label="@string/title_activity_general2"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".features.login.LoginActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name=".features.configuracion.ip.IpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".utils.scanner.CodeCaptureActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".features.principal.GeneralActivityOld"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".features.configuracion.ConfiguracionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".features.configuracion.almacen.AlmacenActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".features.configuracion.impresionbluetooth.ImpresionBluetoothActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".features.configuracion.dodumentospendientes.DocumentosPendientesActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".features.splash.SplashActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

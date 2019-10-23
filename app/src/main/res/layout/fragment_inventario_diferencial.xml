@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        style="@style/AppTheme.Card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_weight="0"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        android:padding="4dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/filtrar"
+            style="@style/menu_item_text" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@string/ubicacion"
+                style="@style/menu_item_option"/>
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/seleccion_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:layout_marginStart="@dimen/margin_small" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/producto"
+                style="@style/menu_item_option"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        style="@style/AppTheme.Card"
+        android:padding="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/diferencial_inventario_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item_lectura_diferencial" />
+
+        <ProgressBar
+            android:id="@+id/diferencial_inventario_progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+
+        <TextView
+            android:id="@+id/empty_diferencial_inv_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/realice_busqueda"
+            android:textSize="16sp"
+            android:layout_centerInParent="true"
+            android:textAlignment="center"/>
+
+        <ImageView
+            android:id="@+id/error_diferencial_inv_image_view"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:layout_above="@id/empty_diferencial_inv_text_view"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/ic_no_internet"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/retry_faltantes_inv_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:textSize="14sp"
+            android:text="@string/reintentar"
+            android:textColor="@color/red"
+            android:layout_centerInParent="true"
+            android:layout_below="@id/empty_diferencial_inv_text_view"
+            android:layout_marginTop="10dp"
+            android:textAllCaps="true"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

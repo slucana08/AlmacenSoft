@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_connected"
+        android:icon="@drawable/ic_network_state"
+        android:title="Eliminar"
+        app:iconTint="@android:color/white"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_disconnected"
+        android:icon="@drawable/ic_network_state"
+        android:title="@string/action_settings"
+        app:iconTint="@color/textColorPrimaryConfig"
+        app:showAsAction="always" />
+</menu>
